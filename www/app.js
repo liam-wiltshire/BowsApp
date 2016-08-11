@@ -24,7 +24,7 @@
 		},
 		getTick : function(){
 			actions.processAjax("act=currentTick",function(data){
-				actions.doReplace({'tick' : data});
+				actions.doReplace({'pt' : data});
 			});
 		},
 
@@ -41,6 +41,7 @@
 			actions.processAjax(data,function(data){
 				if ($("#act-login").is(":checked")){
 					global.username = $("input[name=username]").val();
+					global.storage.setItem("username",global.username);
 					$(".welcometext").removeClass("hidden");
 					$(".login").addClass("hidden");
 					action.doReplace({
