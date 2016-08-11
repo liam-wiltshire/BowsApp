@@ -15,7 +15,7 @@
 		"ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
 
 		push.on('registration', function(data) {
-			document.getElementById("gcm_id").innerHtml = data.registrationId;
+			document.getElementById("gcm_id").innerHTML = data.registrationId;
 		});
 
 		push.on('notification', function(data) {
@@ -28,7 +28,7 @@
 		});
 
 		push.on('error', function(e) {
-			console.log(e.message);
+			alert(e.message);
 		});
 	}
 </script>
