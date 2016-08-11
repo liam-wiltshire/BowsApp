@@ -7,7 +7,8 @@
     <author email="liam@w.iltshi.re" href="http://w.iltshi.re/">
         Liam Wiltshire
     </author>
-    <preference name="phonegap-version" value="cli-5.2.0" />
+    <preference name="android-build-tool" value="gradle" />
+    <preference name="phonegap-version" value="cli-6.3.0" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="portrait" />
     <preference name="target-device" value="universal" />
@@ -32,7 +33,7 @@
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
 
-	<gap:plugin name="phonegap-plugin-push" spec="1.6.0">
+	<gap:plugin spec="https://github.com/phonegap/phonegap-plugin-push.git#v1.6.x" source="git">
 	    <param name="SENDER_ID" value="544438236481" />
 	</gap:plugin>
 
