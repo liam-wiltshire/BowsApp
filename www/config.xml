@@ -7,6 +7,7 @@
     <author email="liam@w.iltshi.re" href="http://w.iltshi.re/">
         Liam Wiltshire
     </author>
+    <preference name="android-build-tool" value="gradle" />
     <preference name="phonegap-version" value="cli-5.2.0" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="portrait" />
