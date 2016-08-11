@@ -32,7 +32,7 @@
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
 
-	<gap:plugin name="phonegap-plugin-push" spec="1.6.0">
+	<gap:plugin spec="https://github.com/phonegap/phonegap-plugin-push.git" source="git">
 	    <param name="SENDER_ID" value="544438236481" />
 	</gap:plugin>
 
