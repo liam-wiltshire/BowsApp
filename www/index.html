@@ -7,35 +7,126 @@
 <title>Hello World</title>
 
 <script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript">
-	document.addEventListener("deviceready",onDeviceReady,false);
-	function onDeviceReady(){
-		alert("OK!");
-		var push = PushNotification.init({ "android": {"senderID": "544438236481"},
-		"ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
 
-		push.on('registration', function(data) {
-			document.getElementById("gcm_id").innerHtml = data.registrationId;
-		});
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.11.0.min.js"></script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--Google Fonts-->
 
-		push.on('notification', function(data) {
-			alert(data.title+" Message: " +data.message);
-			// data.title,
-			// data.count,
-			// data.sound,
-			// data.image,
-			// data.additionalData
-		});
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+	</script>
 
-		push.on('error', function(e) {
-			console.log(e.message);
-		});
-	}
-</script>
+<script src="js/script.js"></script>
+<!--responsive tab script here-->
+
+
+
+
+<script type="text/javascript" src="app.js"></script>
 </head>
 <body>
-<h1>Push Notification Example</h1>
-Your GCM ID : <br/>
-<p id="gcm_id"></p>
+
+<!--header start here-->
+<div class="header">
+	<h3 class="main-head">RainbowS App 1.0</h3>
+	    <div class="head-strip">
+			<div class="welcometext">
+				<div class="head-strip-left">
+					<div class="joe-text">
+						<h2>Welcome back <span data-replace="name">webulations</span></h2>
+					</div>
+				</div>
+				<div class="head-strip-right">
+					<ul class="strip-date">
+						<li><span class="clock"> </span><h4>PT: <strong data-replace="pt">123</strong></h4></li>
+					</ul>
+
+					  <div class="clearfix"> </div>
+				</div>
+			</div>
+	    
+<!--header bottom start here-->
+	    <div class="header-bottom">
+	    	<div class="col-md-4 header-bot-left">
+
+<!--login start here-->
+				 <div class="login ">
+					<h4>LOGIN/REGISTER</h4>
+					<form>
+					  <div class="login-name">
+					  	<span class="login-user"> </span>
+						<input type="text" name="username" placeholder="IRC Username"/>
+					  </div>
+					  <div class="login-password">
+					  	<span class="login-key"> </span>
+						<input type="radio" id="act-login" name="act" value="login" checked="checked" /> <label for="act-login">Login</label> &nbsp;|&nbsp; <input id="act-registerUser" type="radio" name="act" value="registerUser" /> <label for="act-registerUser">Register</label>
+					  </div>
+						<div class="send">
+							<input type="button" id="processLogin" value="Next &raquo;">
+						</div>
+						<div class="clearfix"> </div>
+					</form>
+
+				 </div>
+<!--login end here-->
+
+	    		<div class="banner">
+	    			<div class="bann-left">
+	    				<div class="bann-text">
+	    					<h1>MOTD:</h1>
+	    					<p>What else could this app be used for? Speak to Webulations with any ideas</p>
+	    				</div>
+	    			</div>
+	    		  <div class="clearfix"> </div>
+	    		</div>
+
+
+	    			
+	    		</div>
+	    		 <div class="clearfix"> </div>
+	      </div>
+	  </div>
+   <div class="clearfix"> </div>
+</div>
+ <div class="clearfix"> </div>
+</div>
+        <div class="copy-right">
+		        <script type="text/javascript">
+										$(document).ready(function() {
+											/*
+											var defaults = {
+									  			containerID: 'toTop', // fading element id
+												containerHoverID: 'toTopHover', // fading element hover id
+												scrollSpeed: 1200,
+												easingType: 'linear' 
+									 		};
+											*/
+											
+											$().UItoTop({ easingType: 'easeOutQuart' });
+											
+										});
+									</script>
+						<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+		   </div>
+<!--header bottom end here-->
+<!--header end here-->
+
+
 </body>
 </html>
