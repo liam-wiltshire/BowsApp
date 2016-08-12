@@ -127,6 +127,7 @@
 			actions.processAjax("act=getScans&username="+global.username+"&registration_id="+global.registration_id+"",function(data){
 				x = 0;
 				html = "";
+				alert(data);
 				alert(data.length);
 				while (x < data.length){
 					try {
