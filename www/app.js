@@ -46,11 +46,7 @@
 
 		processAjax : function(args,success,fail){
 			url = "http://www.pa-rainbows.com/api/api.php?"+args+"";
-			alert(url);
 			$.get(url,function(data){
-				for (i in data){
-					alert(i);
-				}
 				if (data.success == true){
 					success(data.data);
 				}else{
@@ -128,15 +124,15 @@
 
 		},
 		getScanRequests: function(){
-			alert("Get Scans");
 			actions.processAjax("act=getScans&username="+global.username+"&registration_id="+global.registration_id+"",function(data){
 				x = 0;
 				html = "";
-				alert("Data" + data);
-				alert("Data Length" + data.length);
 				while (x < data.length){
 					try {
 						scan = data[x];
+						for (i in scan){
+							alert(i + " = " + scan[i]);
+						}
 						html += '<div class="latest-today"><h4>PT: ' + scan.tick + '</h4><h3>' + scantypes[scan.scantype].name + ' on ' + scan.x + ':' + scan.y + ':' + scan.z + '</h3><p><a class="btn btn-primary" target="_blank" href="http://game.planetarion.com/waves.pl?id=' + scantypes[scan.scantype].id + '&x=' + scan.x + '&y=' + scan.y + '&z=' + scan.x + '">Scan</a> Requested by: <span class="todt-joe"> ' + scan.name + ' </span></p></div>';
 						x++;
 					}catch (e){
