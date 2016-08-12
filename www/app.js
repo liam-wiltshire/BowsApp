@@ -79,7 +79,7 @@
 					global.storage.setItem("username",global.username);
 					$(".welcometext").removeClass("hidden");
 					$(".login").addClass("hidden");
-					action.doReplace({
+					actions.doReplace({
 						username: global.username
 					});
 				}else{
@@ -107,7 +107,7 @@
 
 			if (global.storage.getItem("username")){
 				global.username = global.storage.getItem("username");
-				action.doReplace({
+				actions.doReplace({
 					username: global.username
 				});
 				actions.getScanRequests();
