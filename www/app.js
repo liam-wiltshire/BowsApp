@@ -130,17 +130,16 @@
 				while (x < data.length){
 					try {
 						scan = data[x];
-						for (i in scan){
-							alert(i + " = " + scan[i]);
-						}
-						html += '<div class="latest-today"><h4>PT: ' + scan.tick + '</h4><h3>' + scantypes[scan.scantype].name + ' on ' + scan.x + ':' + scan.y + ':' + scan.z + '</h3><p><a class="btn btn-primary" target="_blank" href="http://game.planetarion.com/waves.pl?id=' + scantypes[scan.scantype].id + '&x=' + scan.x + '&y=' + scan.y + '&z=' + scan.x + '">Scan</a> Requested by: <span class="todt-joe"> ' + scan.name + ' </span></p></div>';
+
+						html += '<div class="latest-today"><h4>PT: ' + scan.tick + '</h4><h3>' + scantypes[scan.scantype.toLowerCase()].name + ' on ' + scan.x + ':' + scan.y + ':' + scan.z + '</h3><p><a class="btn btn-primary" target="_blank" href="http://game.planetarion.com/waves.pl?id=' + scantypes[scan.scantype.toLowerCase()].id + '&x=' + scan.x + '&y=' + scan.y + '&z=' + scan.x + '">Scan</a> Requested by: <span class="todt-joe"> ' + scan.name + ' </span></p></div>';
 						x++;
 					}catch (e){
 						alert(e);
 					}
 				}
 
-				alert("HTML" + html);
+				$(".latest-act-bot").html(html);
+
 			},function(data){
 				alert("Exception: " + data);
 			});
