@@ -45,7 +45,12 @@
 	var actions = {
 
 		processAjax : function(args,success,fail){
-			$.get("http://www.pa-rainbows.com/api/api.php?"+args+"",function(data){
+			url = "http://www.pa-rainbows.com/api/api.php?"+args+"";
+			alert(url);
+			$.get(url,function(data){
+				for (i in data){
+					alert(i);
+				}
 				if (data.success == true){
 					success(data.data);
 				}else{
@@ -127,8 +132,8 @@
 			actions.processAjax("act=getScans&username="+global.username+"&registration_id="+global.registration_id+"",function(data){
 				x = 0;
 				html = "";
-				alert(data);
-				alert(data.length);
+				alert("Data" + data);
+				alert("Data Length" + data.length);
 				while (x < data.length){
 					try {
 						scan = data[x];
@@ -139,9 +144,9 @@
 					}
 				}
 
-				alert(html);
+				alert("HTML" + html);
 			},function(data){
-				alert(data);
+				alert("Exception: " + data);
 			});
 		}
 
