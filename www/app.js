@@ -107,6 +107,9 @@
 
 			if (global.storage.getItem("username")){
 				global.username = global.storage.getItem("username");
+				action.doReplace({
+					username: global.username
+				});
 				actions.getScanRequests();
 			}else{
 				$(".welcometext").addClass("hidden");
@@ -117,6 +120,7 @@
 
 		},
 		getScanRequests: function(){
+			alert("Get Scans");
 			actions.processAjax("act=getScans&username="+global.username+"&registration_id="+global.registration_id+"",function(data){
 				x = 0;
 				html = "";
@@ -129,6 +133,9 @@
 					</div>';
 					x++;
 				}
+			},function(data){
+				alert("act=getScans&username="+global.username+"&registration_id="+global.registration_id+"");
+				alert(data);
 			});
 		}
 
