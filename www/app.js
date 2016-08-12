@@ -137,7 +137,7 @@
 					x++;
 				}
 
-				$(".latest-act-bot").html(html);
+				alert(html);
 			},function(data){
 				alert(data);
 			});
