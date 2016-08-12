@@ -80,7 +80,7 @@
 					$(".welcometext").removeClass("hidden");
 					$(".login").addClass("hidden");
 					actions.doReplace({
-						username: global.username
+						name: global.username
 					});
 				}else{
 					alert(data);
@@ -98,13 +98,12 @@
 			push.on('registration', function(data) {
 				global.registration_id = data.registrationId;
 
-				alert(global.registration_id);
 				//Now, are we a recognised user?
 
 				if (global.storage.getItem("username")){
 					global.username = global.storage.getItem("username");
 					actions.doReplace({
-						username: global.username
+						name: global.username
 					});
 					actions.getScanRequests();
 				}else{
@@ -137,8 +136,9 @@
 					</div>';
 					x++;
 				}
+
+				$(".latest-act-bot").html(html);
 			},function(data){
-				alert("act=getScans&username="+global.username+"&registration_id="+global.registration_id+"");
 				alert(data);
 			});
 		}
