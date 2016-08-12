@@ -97,25 +97,29 @@
 
 			push.on('registration', function(data) {
 				global.registration_id = data.registrationId;
+
+				alert(global.registration_id);
+				//Now, are we a recognised user?
+
+				if (global.storage.getItem("username")){
+					global.username = global.storage.getItem("username");
+					actions.doReplace({
+						username: global.username
+					});
+					actions.getScanRequests();
+				}else{
+					$(".welcometext").addClass("hidden");
+					$(".login").removeClass("hidden");
+
+				}
+
 			});
 
 			push.on('notification', function(data) {
 				alert(data.title+" Message: " +data.message);
 			});
 
-			//Now, are we a recognised user?
 
-			if (global.storage.getItem("username")){
-				global.username = global.storage.getItem("username");
-				actions.doReplace({
-					username: global.username
-				});
-				actions.getScanRequests();
-			}else{
-				$(".welcometext").addClass("hidden");
-				$(".login").removeClass("hidden");
-				
-			}
 
 
 		},
