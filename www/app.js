@@ -8,17 +8,6 @@ alert("Test");
 	}
 
 
-	var prefs = {
-		'scanalerts' : 	0b00000001,
-		'pref2' : 		0b00000010,
-		'pref3' : 		0b00000100,
-		'pref4' : 		0b00001000,
-		'pref5' : 		0b00010000,
-		'pref6' : 		0b00100000,
-		'pref7' : 		0b01000000,
-		'pref8' : 		0b10000000,
-	}
-
 	var scantypes = {
 		p : {
 			id : 1,
