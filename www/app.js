@@ -1,4 +1,4 @@
-alert("Test");
+alert("This is a test");
 
 	var global = {
 		username : '',
