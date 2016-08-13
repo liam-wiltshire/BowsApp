@@ -170,11 +170,13 @@
 			actions.getScanRequests();
 		});
 
-		$(".latest-act-bot").on("click",".doScan",function(){
-			url = prompt("Paste the scan URL here and we will submit it back to BowBot");
-			if (url){
-				alert(url);
-			}
+		$(".latest-act-bot").on("mouseup",".doScan",function(){
+			setTimeout(function(){
+				url = prompt("Paste the scan URL here and we will submit it back to BowBot");
+				if (url){
+					alert(url);
+				}
+			},500);
 		});
 
 
