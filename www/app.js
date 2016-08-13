@@ -92,6 +92,10 @@
 		init : function(){
 			//First, get the device ID
 
+			actions.processAjax("act=motd",function(data){
+				$(".motd").html(data);
+			});
+
 
 			var push = PushNotification.init({ "android": {"senderID": "544438236481"},
 				"ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
@@ -131,7 +135,7 @@
 					try {
 						scan = data[x];
 
-						html += '<div class="latest-today"><h4>PT: ' + scan.tick + '</h4><h3>' + scantypes[scan.scantype.toLowerCase()].name + ' on ' + scan.x + ':' + scan.y + ':' + scan.z + '</h3><p><a class="btn btn-primary" target="_blank" href="http://game.planetarion.com/waves.pl?id=' + scantypes[scan.scantype.toLowerCase()].id + '&x=' + scan.x + '&y=' + scan.y + '&z=' + scan.x + '">Scan</a> Requested by: <span class="todt-joe"> ' + scan.name + ' </span></p></div>';
+						html += '<div class="latest-today"><h4>PT: ' + scan.tick + '</h4><h3>' + scantypes[scan.scantype.toLowerCase()].name + ' on ' + scan.x + ':' + scan.y + ':' + scan.z + '</h3><p><a class="doScan btn btn-primary" target="_blank" href="http://game.planetarion.com/waves.pl?id=' + scantypes[scan.scantype.toLowerCase()].id + '&x=' + scan.x + '&y=' + scan.y + '&z=' + scan.x + '">Scan</a> Requested by: <span class="todt-joe"> ' + scan.name + ' </span></p></div>';
 						x++;
 					}catch (e){
 						alert(e);
@@ -164,6 +168,13 @@
 
 		$("#refreshScans").on("click",function(){
 			actions.getScanRequests();
+		});
+
+		$(".latest-act-bot").on("click",".doScan",function(){
+			url = prompt("Paste the scan URL here and we will submit it back to BowBot");
+			if (url){
+				alert(url);
+			}
 		});
 
 
