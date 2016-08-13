@@ -174,7 +174,9 @@
 			setTimeout(function(){
 				url = prompt("Paste the scan URL here and we will submit it back to BowBot");
 				if (url){
-					alert(url);
+					actions.processAjax("act=submitScan&url="+url+"",function(){
+						actions.getScanRequests();
+					});
 				}
 			},500);
 		});
