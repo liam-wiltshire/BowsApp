@@ -1,5 +1,3 @@
-alert("Sup!");
-
 	var global = {
 		username : '',
 		registration_id : '',
@@ -9,14 +7,14 @@ alert("Sup!");
 
 
 	var prefs = {
-		'scanalerts' : 	0b00000001,
-		'pref2' : 		0b00000010,
-		'pref3' : 		0b00000100,
-		'pref4' : 		0b00001000,
-		'pref5' : 		0b00010000,
-		'pref6' : 		0b00100000,
-		'pref7' : 		0b01000000,
-		'pref8' : 		0b10000000,
+		'scanalerts' : 	parseInt("00000001",2),
+		'pref2' : 		parseInt("00000010",2),
+		'pref3' : 		parseInt("00000100",2),
+		'pref4' : 		parseInt("00001000",2),
+		'pref5' : 		parseInt("00010000",2),
+		'pref6' : 		parseInt("00100000",2),
+		'pref7' : 		parseInt("01000000",2),
+		'pref8' : 		parseInt("10000000",2),
 	}
 
 	var scantypes = {
