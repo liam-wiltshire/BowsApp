@@ -116,7 +116,7 @@
 			});
 
 			push.on('notification', function(data) {
-				alert(data.title+" Message: " +data.message);
+				actions.getScanRequests();
 			});
 
 
