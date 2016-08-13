@@ -37,7 +37,10 @@
 	    <param name="SENDER_ID" value="544438236481" />
 	</gap:plugin>
 
- 
+    <icon src="icon.png" />
+
+
+
 
     <access origin="*" />
     <plugin name="cordova-plugin-whitelist" version="1" />
