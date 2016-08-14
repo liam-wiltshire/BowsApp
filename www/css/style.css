@@ -955,7 +955,6 @@ span.menu-at-on,span.menu-at-on1{
   -o-transition: 0.5s all;
 }
 strong.tad-timer {
-  background: url(../images/time.png)no-repeat 0px 5px;
   width: 13px;
   height: 17px;
   margin: 0px 0px 0px 10px;
@@ -1775,7 +1774,6 @@ strong.tad-timer i.tab-text-time {
   padding: 0px 0px 0px 11px;
 }
 strong.tad-timer {
-  background: url(../images/time.png)no-repeat 0px 3px;
   margin: 0px 0px 0px 3px;
 }
 .checkbox-gree i {

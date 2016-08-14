@@ -7,14 +7,8 @@
 
 
 	var prefs = {
-		'scanalerts' : 	parseInt("00000001",2),
-		'pref2' : 		parseInt("00000010",2),
-		'pref3' : 		parseInt("00000100",2),
-		'pref4' : 		parseInt("00001000",2),
-		'pref5' : 		parseInt("00010000",2),
-		'pref6' : 		parseInt("00100000",2),
-		'pref7' : 		parseInt("01000000",2),
-		'pref8' : 		parseInt("10000000",2),
+		'scanalerts' 	: 	{ value : parseInt("00000001",2), hint : 'Receive alerts for scan requests', name : 'Scanning Alerts' },
+		'pref2' 		: 	{ value : parseInt("00000010",2), hint : 'Placeholder preference', name : 'Dummy Pref' },
 	}
 
 	var scantypes = {
@@ -61,6 +55,42 @@
 				alert("Scan submitted to BowBot");
 			});
 
+		},
+
+		getPrefs : function(){
+			actions.processAjax("act=getPrefs&username="+global.username+"&registration_id="+global.registration_id+"",function(data){
+
+				html = "";
+
+				for (i in prefs){
+					pref = prefs[i];
+
+					html += '<label for="pref_'+i+'" id="pref_'+i+'_label"><i class="ferme"> </i> <span class="tickimg"><input id="pref_'+i+'" name="setting" type="checkbox" value="'+pref.value+'" ';
+					if (data & pref.value){
+						html += ' checked="checked" ';
+					}
+					html += '/><i> </i>'+pref.name+'<strong class="tad-timer"> <i class="tab-text-time">'+pref.hint+'</i></strong></span></label>';
+
+				}
+
+				$("#prefsForm").html(html);
+
+			});
+		},
+
+		setPrefs : function(){
+			var prefs = 0;
+			$fields = $("input[name=setting]");
+			$fields.each(function(){
+				if ($(this).is(":checked")) {
+					prefs = prefs | $(this).val();
+				}
+			});
+
+			alert("Your prefs is "+prefs+"");
+			actions.processAjax("act=setPrefs&prefs="+prefs+"&username="+global.username+"&registration_id="+global.registration_id+"",function(data){
+				actions.getPrefs();
+			});
 		},
 
 		processAjax : function(args,success,fail){
@@ -130,6 +160,7 @@
 						name: global.username
 					});
 					actions.getScanRequests();
+					actions.getPrefs();
 				}else{
 					$(".welcometext").addClass("hidden");
 					$(".login").removeClass("hidden");
@@ -192,6 +223,10 @@
 		$(".doSubmitScan").on("click",function(){
 			actions.submitScan($("#scanURL").val());
 		});
+
+		$("#setPrefs"),on("click",function(){
+			actions.setPrefs();
+		})
 
 		$(".latest-act-bot").on("mouseup",".doScan",function(){
 			setTimeout(function(){
