@@ -57,6 +57,8 @@
 		submitScan: function(url){
 			actions.processAjax("act=submitScan&url="+url+"",function(){
 				actions.getScanRequests();
+				$("#scanURL").val("");
+				alert("Scan submitted to BowBot");
 			});
 
 		},
