@@ -225,6 +225,7 @@
 		});
 
 		$("#setPrefs").on("click",function(){
+			alert("Set Prefs!");
 			actions.setPrefs();
 		})
 
