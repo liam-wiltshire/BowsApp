@@ -69,7 +69,7 @@
 					if (data & pref.value){
 						html += ' checked="checked" ';
 					}
-					html += '/><i> </i>'+pref.name+'<strong class="tad-timer"> <i class="tab-text-time">'+pref.hint+'</i></strong></span></label>';
+					html += '/><i> </i>'+pref.name+'<br /><strong class="tad-timer"> <i class="tab-text-time">'+pref.hint+'</i></strong></span></label>';
 
 				}
 
@@ -224,7 +224,7 @@
 			actions.submitScan($("#scanURL").val());
 		});
 
-		$("#setPrefs"),on("click",function(){
+		$("#setPrefs").on("click",function(){
 			actions.setPrefs();
 		})
 
