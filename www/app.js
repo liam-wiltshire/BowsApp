@@ -107,8 +107,8 @@
 			});
 
 
-			var push = PushNotification.init({ "android": {"senderID": "544438236481"},
-				"ios": {"alert": "true", "badge": "true", "sound": "true"}, "windows": {} } );
+			var push = PushNotification.init({ "android": {"senderID": "544438236481", "sound" : "true", "vibrate" : "true"},
+				"ios": {"alert": "true", "badge": "true", "sound": "true", "vibrate" : "true"}, "windows": {} } );
 
 			push.on('registration', function(data) {
 				global.registration_id = data.registrationId;
