@@ -54,6 +54,13 @@
 
 	var actions = {
 
+		submitScan: function(url){
+			actions.processAjax("act=submitScan&url="+url+"",function(){
+				actions.getScanRequests();
+			});
+
+		},
+
 		processAjax : function(args,success,fail){
 			url = "http://www.pa-rainbows.com/api/api.php?"+args+"";
 			$.get(url,function(data){
@@ -180,13 +187,15 @@
 			actions.getScanRequests();
 		});
 
+		$(".doSubmitScan").on("click",function(){
+			actions.submitScan($("#scanURL").val());
+		});
+
 		$(".latest-act-bot").on("mouseup",".doScan",function(){
 			setTimeout(function(){
 				url = prompt("Paste the scan URL here and we will submit it back to BowBot");
 				if (url){
-					actions.processAjax("act=submitScan&url="+url+"",function(){
-						actions.getScanRequests();
-					});
+					actions.submitScan(url);
 				}
 			},500);
 		});
