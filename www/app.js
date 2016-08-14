@@ -87,9 +87,10 @@
 				}
 			});
 
-			alert("Your prefs is "+prefs+"");
 			actions.processAjax("act=setPrefs&prefs="+prefs+"&username="+global.username+"&registration_id="+global.registration_id+"",function(data){
+				alert("Prefs Updated");
 				actions.getPrefs();
+				$(".settings-menu").addClass("hidden");
 			});
 		},
 
@@ -225,8 +226,11 @@
 		});
 
 		$("#setPrefs").on("click",function(){
-			alert("Set Prefs!");
 			actions.setPrefs();
+		})
+
+		$(".settiing").on("click",function(){
+			$(".settings-menu").toggleClass("hidden");
 		})
 
 		$(".latest-act-bot").on("mouseup",".doScan",function(){
