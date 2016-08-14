@@ -227,11 +227,13 @@
 
 		$("#setPrefs").on("click",function(){
 			actions.setPrefs();
-		})
+		});
+
 
 		$(".settiing").on("click",function(){
+			alert("Click!");
 			$(".settings-menu").toggleClass("hidden");
-		})
+		});
 
 		$(".latest-act-bot").on("mouseup",".doScan",function(){
 			setTimeout(function(){
@@ -245,6 +247,3 @@
 
 	}
 
-	/*$(function(){
-		onDeviceReady();
-	})*/
