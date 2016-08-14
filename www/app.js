@@ -171,7 +171,11 @@
 			});
 
 			push.on('notification', function(data) {
-				actions.getScanRequests();
+				if (data.title == "Scan Request Received") {
+					actions.getScanRequests();
+				}else{
+					navigator.notification.alert(data.message,function(){},data.message.title);
+				}
 			});
 
 
