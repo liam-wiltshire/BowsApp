@@ -116,7 +116,7 @@
 
 		sendMessage : function(){
 			actions.processAjax("act=sendMsg&username="+global.username+"&registration_id="+global.registration_id+"&msg="+encodeURIComponent(text)+"",function(){
-
+				alert("??");
 			});
 		},
 
