@@ -183,6 +183,8 @@
 					actions.getScanRequests();
 				}else{
 					navigator.notification.prompt(data.message,function(buttonIndex,text){
+						alert(buttonIndex);
+						alert(text);
 						if (buttonIndex == 0){
 							actions.sendMessage("Message acknowledged");
 						}else if(buttonIndex == 1){
