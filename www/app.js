@@ -182,9 +182,9 @@
 				if (data.title == "Scan Request Received") {
 					actions.getScanRequests();
 				}else{
-					navigator.notification.prompt(data.message,function(buttonIndex,text){
-						alert(buttonIndex);
-						alert(text);
+					navigator.notification.prompt(data.message,function(response){
+						buttonIndex = response.buttonIndex;
+						text = response.text;
 						if (buttonIndex == 1){
 							actions.sendMessage("Message acknowledged");
 						}else if(buttonIndex == 2){
