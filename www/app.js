@@ -185,9 +185,9 @@
 					navigator.notification.prompt(data.message,function(buttonIndex,text){
 						alert(buttonIndex);
 						alert(text);
-						if (buttonIndex == 0){
+						if (buttonIndex == 1){
 							actions.sendMessage("Message acknowledged");
-						}else if(buttonIndex == 1){
+						}else if(buttonIndex == 2){
 							actions.sendMessage(text);
 						}
 					},data.title,["Ack","Send Response","Ignore"],"Response Text...");
