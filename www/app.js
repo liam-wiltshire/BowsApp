@@ -174,7 +174,13 @@
 				if (data.title == "Scan Request Received") {
 					actions.getScanRequests();
 				}else{
-					navigator.notification.alert(data.message,function(){},data.message.title);
+					navigator.notification.prompt(data.message,function(buttonIndex,text){
+						if (buttonIndex == 0){
+							actions.sendMessage("Message acknowledged");
+						}else if(buttonIndex == 1){
+							actions.sendMessage(text);
+						}
+					},data.title,["Ack","Send Response","Ignore"],"Response Text...");
 				}
 			});
 
@@ -235,7 +241,6 @@
 
 
 		$(".settiing").on("click",function(){
-			alert("Click!");
 			$(".settings-menu").toggleClass("hidden");
 		});
 
