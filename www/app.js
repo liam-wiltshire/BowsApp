@@ -183,7 +183,7 @@
 				}else{
 					navigator.notification.prompt(data.message,function(response){
 						buttonIndex = response.buttonIndex;
-						text = response.text;
+						text = response.input1;
 						if (buttonIndex == 1){
 							actions.sendMessage("Message acknowledged");
 						}else if(buttonIndex == 2){
